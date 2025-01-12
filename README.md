@@ -8,15 +8,26 @@ KAGGLE_USERNAME="<username>"
 KAGGLE_KEY="<key>"
 ```
 
-# TODO: docker
+## Container
+To run the code in a docker container, you can use the following commands:
+```bash
+# create the docker image (it may take a while)
+docker build -t fl_benchmark .
+# create the docker container
+docker run -d --name fl_benchmark fl_benchmark
+# start the container if it is not running
+docker start fl_benchmark
+# go to the container
+docker exec -it fl_benchmark bash
+```
 
 ## Usage
 To run the code, you can use the following commands:
 ```bash
 # download the datasets
-python3 Programs/preprocess.py -d all
+python3 Programs/preprocess.py -d IOT_DNL
 # divide the datasets
-python3 Programs/division.py -d all -n 4
+python3 Programs/division.py -d IOT_DNL -n 4
 # or from a file
 mpirun -n 5 python3 Programs/fl.py --file example.json
 # to see the help
