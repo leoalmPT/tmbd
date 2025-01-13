@@ -27,9 +27,9 @@ To run the code, you can use the following commands:
 # download the datasets
 python3 Programs/preprocess.py -d IOT_DNL
 # divide the datasets
-python3 Programs/division.py -d IOT_DNL -n 4
+python3 Programs/division.py -d IOT_DNL -n 2
 # or from a file
-mpirun -n 5 python3 Programs/fl.py --file example.json
+mpirun -n 3 python3 Programs/fl.py --file example.json 2>/dev/null
 # to see the help
 python3 Programs/fl.py -h
 ```
